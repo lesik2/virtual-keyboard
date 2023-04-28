@@ -34,6 +34,7 @@ img{
   margin: 10px auto;
 }
 .keyboard{
+  user-select: none;
   width: 704px;
   margin: 0 auto;
   background: #888888;
@@ -65,10 +66,11 @@ img{
   box-shadow: 0 4px 3px #454140;
   transition: background-color 0.3s, box-shadow 0.3s, border-radius 0.3s;
 }
-.clicked{
+.keyboard .key.clicked{
   box-shadow: none;
   border-radius: 10px;
   background-color: #2B739A;
+  
 }
 .key:hover{
   background-color: #7291A2;

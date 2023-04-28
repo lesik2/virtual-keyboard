@@ -1,4 +1,4 @@
-export const enKeyBoard = [
+export let enKeyBoard = [
   {
     key: '`',
     code: 'Backquote',
@@ -257,3 +257,263 @@ export const enKeyBoard = [
     code: 'ControlRight',
   },
 ];
+export let enKeyBoardShift = [
+  {
+    key: '~',
+    code: 'Backquote',
+  },
+  {
+    key: '!',
+    code: 'Digit1',
+  },
+  {
+    key: '@',
+    code: 'Digit2',
+  },
+  {
+    key: '#',
+    code: 'Digit3',
+  },
+  {
+    key: '$',
+    code: 'Digit4',
+  },
+  {
+    key: '%',
+    code: 'Digit5',
+  },
+  {
+    key: '^',
+    code: 'Digit6',
+  },
+  {
+    key: '&',
+    code: 'Digit7',
+  },
+  {
+    key: '*',
+    code: 'Digit8',
+  },
+  {
+    key: '(',
+    code: 'Digit9',
+  },
+  {
+    key: ')',
+    code: 'Digit0',
+  },
+  {
+    key: '_',
+    code: 'Minus',
+  },
+  {
+    key: '+',
+    code: 'Equal',
+  },
+  {
+    key: 'Backspace',
+    code: 'Backspace',
+  },
+  {
+    key: 'Tab',
+    code: 'Tab',
+  },
+  {
+    key: 'q',
+    code: 'KeyQ',
+  },
+  {
+    key: 'w',
+    code: 'KeyW',
+  },
+  {
+    key: 'e',
+    code: 'KeyE',
+  },
+  {
+    key: 'r',
+    code: 'KeyR',
+  },
+  {
+    key: 't',
+    code: 'KeyT',
+  },
+  {
+    key: 'y',
+    code: 'KeyY',
+  },
+  {
+    key: 'u',
+    code: 'KeyU',
+  },
+  {
+    key: 'i',
+    code: 'KeyI',
+  },
+  {
+    key: 'o',
+    code: 'KeyO',
+  },
+  {
+    key: 'p',
+    code: 'KeyP',
+  },
+  {
+    key: '{',
+    code: 'BracketLeft',
+  },
+  {
+    key: '}',
+    code: 'BracketRight',
+  },
+  {
+    key: '|',
+    code: 'Backslash',
+  },
+  {
+    key: 'Del',
+    code: 'Delete',
+  },
+  {
+    key: 'CapsLock',
+    code: 'CapsLock',
+  },
+  {
+    key: 'a',
+    code: 'KeyA',
+  },
+  {
+    key: 's',
+    code: 'KeyS',
+  },
+  {
+    key: 'd',
+    code: 'KeyD',
+  },
+  {
+    key: 'f',
+    code: 'KeyF',
+  },
+
+  {
+    key: 'g',
+    code: 'KeyG',
+  },
+  {
+    key: 'h',
+    code: 'KeyH',
+  },
+  {
+    key: 'j',
+    code: 'KeyJ',
+  },
+  {
+    key: 'k',
+    code: 'KeyK',
+  },
+  {
+    key: 'l',
+    code: 'KeyL',
+  },
+  {
+    key: ':',
+    code: 'Semicolon',
+  },
+  {
+    key: '"',
+    code: 'Quote',
+  },
+  {
+    key: 'Enter',
+    code: 'Enter',
+  },
+  {
+    key: 'Shift',
+    code: 'ShiftLeft',
+  },
+  {
+    key: 'z',
+    code: 'KeyZ',
+  },
+  {
+    key: 'x',
+    code: 'KeyX',
+  },
+  {
+    key: 'c',
+    code: 'KeyC',
+  },
+  {
+    key: 'v',
+    code: 'KeyV',
+  },
+  {
+    key: 'b',
+    code: 'KeyB',
+  },
+  {
+    key: 'n',
+    code: 'KeyN',
+  },
+  {
+    key: 'm',
+    code: 'KeyM',
+  },
+  {
+    key: '<',
+    code: 'Comma',
+  },
+  {
+    key: '>',
+    code: 'Period',
+  },
+  {
+    key: '?',
+    code: 'Slash',
+  },
+  {
+    key: '&#9650;',
+    code: 'ArrowUp',
+  },
+  {
+    key: 'Shift',
+    code: 'ShiftRight',
+  },
+  {
+    key: 'Ctrl',
+    code: 'ControlLeft',
+  },
+  {
+    key: 'Win',
+    code: 'MetaLeft',
+  },
+  {
+    key: 'Alt',
+    code: 'AltLeft',
+  },
+  {
+    key: '',
+    code: 'Space',
+  },
+  {
+    key: 'Alt',
+    code: 'AltRight',
+  },
+  {
+    key: '&#9668;',
+    code: 'ArrowLeft',
+  },
+  {
+    key: '&#9660;',
+    code: 'ArrowDown',
+  },
+  {
+    key: '&#9658;',
+    code: 'ArrowRight',
+  },
+  {
+    key: 'Ctrl',
+    code: 'ControlRight',
+  },
+];
+
