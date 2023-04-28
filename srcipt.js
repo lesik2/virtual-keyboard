@@ -1,4 +1,4 @@
-import { enKeyBoard,enKeyBoardShift } from './keys.js';
+import { enKeyBoard,enKeyBoardShift,rusKeyBoard,rusKeyBoardShift } from './keys.js';
 
 
 const createInitDoM = () => {
@@ -83,75 +83,147 @@ const createInitDoM = () => {
 };
 createInitDoM();
 const capsAction=()=>{
+
   document.querySelector('.CapsLock').classList.toggle('clicked');
+  let elements=document.querySelectorAll('.key');
+
       if(document.querySelector('.CapsLock').classList.contains('clicked'))
       {
-        let elements=document.querySelectorAll('.key');
+        let i=0;
         for(let elem of elements)
         {
-          if(elem.className.includes('Key'))
+          if(elem.classList.contains('Backspace')||elem.classList.contains('Tab')||elem.classList.contains('Delete')||
+          elem.classList.contains('CapsLock')||elem.classList.contains('Enter')||
+          elem.classList.contains('ShiftLeft')||elem.classList.contains('ShiftRight')||
+          elem.classList.contains('ControlLeft')||elem.classList.contains('MetaLeft')||elem.classList.contains('AltLeft')||
+          elem.classList.contains('AltRight')||elem.classList.contains('ControlRight'))
           {
-            elem.innerHTML=elem.innerHTML.toUpperCase();
+            i++;
+            continue;
           }
-         
+          elem.innerHTML=elem.innerHTML.toUpperCase();
+          enKeyBoard[i].key=enKeyBoard[i].key.toUpperCase();
+          rusKeyBoard[i].key=rusKeyBoard[i].key.toUpperCase();
+          i++;
         }
+       
       }
       else{
-        let elements=document.querySelectorAll('.key');
+        let i=0;
         for(let elem of elements)
         {
-          if(elem.className.includes('Key'))
+          if(elem.classList.contains('Backspace')||elem.classList.contains('Tab')||elem.classList.contains('Delete')||
+          elem.classList.contains('CapsLock')||elem.classList.contains('Enter')||
+          elem.classList.contains('ShiftLeft')||elem.classList.contains('ShiftRight')||
+          elem.classList.contains('ControlLeft')||elem.classList.contains('MetaLeft')||elem.classList.contains('AltLeft')||
+          elem.classList.contains('AltRight')||elem.classList.contains('ControlRight'))
           {
-            elem.innerHTML=elem.innerHTML.toLowerCase();
+            i++;
+            continue;
           }
-       
+          elem.innerHTML=elem.innerHTML.toLowerCase();
+          enKeyBoard[i].key=enKeyBoard[i].key.toLowerCase();
+          rusKeyBoard[i].key=rusKeyBoard[i].key.toLowerCase();
+          i++;
         }
 
       }
+}
+const changeLanguage=(str)=>{
+  let firstKey=document.querySelector('.KeyQ');
+  let elements=document.querySelectorAll('.key');
+  let i=0;
+  if(firstKey.innerHTML.charCodeAt(0)===81||firstKey.innerHTML.charCodeAt(0)===113)
+  {
+    for(let elem of elements)
+    {
+      if(str!=='shift') elem.innerHTML=rusKeyBoard[i].key;
+      else elem.innerHTML=rusKeyBoardShift[i].key;
+     i++;
+    }
+  }
+  else{
+    for(let elem of elements)
+    {
+      if(str!=='shift') elem.innerHTML=enKeyBoard[i].key;
+      else elem.innerHTML=enKeyBoardShift[i].key;
+     i++;
+    }
+  }
+  
 }
 const shiftAction=(str='off')=>{
   let flag=0;
   let elements=document.querySelectorAll('.key');
   let caps=document.querySelector('.CapsLock');
   if(caps.classList.contains('clicked')) flag=1;
+  let firstKey=document.querySelector('.KeyQ');
+  let lang='ru';
+  if(firstKey.innerHTML.charCodeAt(0)===81||firstKey.innerHTML.charCodeAt(0)===113) lang='en';
   let i=0;
   for(let elem of elements)
   {
-    if(elem.className.includes('Key')&&  flag===0)
-    {
-      if(str==='on')
-      {
-        elem.innerHTML=elem.innerHTML.toUpperCase();
-        i++;
-      }
-      else{
-        elem.innerHTML=elem.innerHTML.toLowerCase();
-        i++;
-      }
-      continue;
-    }
-    if(elem.className.includes('Key')&&  flag===1)
-    {
-      if(str==='on')
-      {
-        elem.innerHTML=elem.innerHTML.toLowerCase();
-        i++;
-      }
-      else{
-        elem.innerHTML=elem.innerHTML.toUpperCase();
-        i++;
-      }
-      continue;
-    }
-    if(str==='on') elem.innerHTML=enKeyBoardShift[i].key;
+    if(elem.classList.contains('Backspace')||elem.classList.contains('Tab')||elem.classList.contains('Delete')||
+          elem.classList.contains('CapsLock')||elem.classList.contains('Enter')||
+          elem.classList.contains('ShiftLeft')||elem.classList.contains('ShiftRight')||
+          elem.classList.contains('ControlLeft')||elem.classList.contains('MetaLeft')||elem.classList.contains('AltLeft')||
+          elem.classList.contains('AltRight')||elem.classList.contains('ControlRight'))
+          {
+            i++;
+            continue;
+          }
 
-    else elem.innerHTML=enKeyBoard[i].key;
+    if(str==='on')
+    {
+      if(lang==='en') elem.innerHTML=enKeyBoardShift[i].key;
+      else elem.innerHTML=rusKeyBoardShift[i].key;
+      
+    } 
+    else{
+      if(lang==='en') elem.innerHTML=enKeyBoard[i].key;
+      else elem.innerHTML=rusKeyBoard[i].key;
+    } 
+    
+    if(flag===0)
+    {
+      if(str==='on')
+      {
+        elem.innerHTML=elem.innerHTML.toUpperCase();
+         enKeyBoardShift[i].key=enKeyBoardShift[i].key.toUpperCase();
+        rusKeyBoardShift[i].key=rusKeyBoardShift[i].key.toUpperCase();
+      }
+      else{
+        elem.innerHTML=elem.innerHTML.toLowerCase();
+         enKeyBoard[i].key=enKeyBoard[i].key.toLowerCase();
+         rusKeyBoard[i].key=rusKeyBoard[i].key.toLowerCase();
+      }
+    }
+    if(flag===1)
+    {
+      if(str==='on')
+      {
+        elem.innerHTML=elem.innerHTML.toLowerCase();
+        enKeyBoardShift[i].key=enKeyBoardShift[i].key.toLowerCase();
+         rusKeyBoardShift[i].key=rusKeyBoardShift[i].key.toLowerCase();
+        
+      }
+      else{
+        elem.innerHTML=elem.innerHTML.toUpperCase();
+         enKeyBoard[i].key=enKeyBoard[i].key.toUpperCase();
+         rusKeyBoard[i].key=rusKeyBoard[i].key.toUpperCase();
+      }
+    }
     i++;
   }
 }
 document.addEventListener('keydown', (event)=>{
 
-
+    if((event.key ==='Alt'&& event.ctrlKey===true)||(event.key==='Control' && event.altKey===true))
+    {
+      if(event.shiftKey===true)changeLanguage('shift');
+      else changeLanguage('unshift');
+      
+    }
     if(event.code === 'CapsLock') 
     {
       capsAction();
