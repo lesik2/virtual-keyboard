@@ -12,6 +12,7 @@ const createInitDoM = () => {
   const textArea = document.createElement('textarea');
   textArea.setAttribute('rows', '5');
   textArea.setAttribute('cols', '50');
+  textArea.setAttribute('autofocus',true);
   textArea.classList.add('text-area');
 
   const description = document.createElement('p');
@@ -28,8 +29,17 @@ const createInitDoM = () => {
   row1.classList.add('row');
   for (let i = 0; i < 14; i++) {
     const key = document.createElement('div');
-    key.className = `key ${enKeyBoard[i].code}`;
-    key.innerHTML = enKeyBoard[i].key;
+    if(sessionStorage.getItem('lang') === 'rus')
+    {
+      
+      key.className = `key ${rusKeyBoard[i].code}`;
+      key.innerHTML = rusKeyBoard[i].key;
+    }
+    else{
+      key.className = `key ${enKeyBoard[i].code}`;
+      key.innerHTML = enKeyBoard[i].key;
+    }
+    
     row1.append(key);
   }
   keyboard.append(row1);
@@ -38,8 +48,17 @@ const createInitDoM = () => {
   row2.classList.add('row');
   for (let i = 14; i < 29; i++) {
     const key = document.createElement('div');
-    key.className = `key ${enKeyBoard[i].code}`;
-    key.innerHTML = enKeyBoard[i].key;
+    if(sessionStorage.getItem('lang') === 'rus')
+    {
+      
+      key.className = `key ${rusKeyBoard[i].code}`;
+      key.innerHTML = rusKeyBoard[i].key;
+    }
+    else{
+      key.className = `key ${enKeyBoard[i].code}`;
+      key.innerHTML = enKeyBoard[i].key;
+    }
+
     row2.append(key);
   }
   keyboard.append(row2);
@@ -48,8 +67,16 @@ const createInitDoM = () => {
   row3.classList.add('row');
   for (let i = 29; i < 42; i++) {
     const key = document.createElement('div');
-    key.className = `key ${enKeyBoard[i].code}`;
-    key.innerHTML = enKeyBoard[i].key;
+    if(sessionStorage.getItem('lang') === 'rus')
+    {
+      
+      key.className = `key ${rusKeyBoard[i].code}`;
+      key.innerHTML = rusKeyBoard[i].key;
+    }
+    else{
+      key.className = `key ${enKeyBoard[i].code}`;
+      key.innerHTML = enKeyBoard[i].key;
+    }
     row3.append(key);
   }
   keyboard.append(row3);
@@ -58,8 +85,16 @@ const createInitDoM = () => {
   row4.classList.add('row');
   for (let i = 42; i < 55; i++) {
     const key = document.createElement('div');
-    key.className = `key ${enKeyBoard[i].code}`;
-    key.innerHTML = enKeyBoard[i].key;
+    if(sessionStorage.getItem('lang') === 'rus')
+    {
+      
+      key.className = `key ${rusKeyBoard[i].code}`;
+      key.innerHTML = rusKeyBoard[i].key;
+    }
+    else{
+      key.className = `key ${enKeyBoard[i].code}`;
+      key.innerHTML = enKeyBoard[i].key;
+    }
     row4.append(key);
   }
   keyboard.append(row4);
@@ -68,8 +103,16 @@ const createInitDoM = () => {
   row5.classList.add('row');
   for (let i = 55; i < enKeyBoard.length; i++) {
     const key = document.createElement('div');
-    key.className = `key ${enKeyBoard[i].code}`;
-    key.innerHTML = enKeyBoard[i].key;
+    if(sessionStorage.getItem('lang') === 'rus')
+    {
+      
+      key.className = `key ${rusKeyBoard[i].code}`;
+      key.innerHTML = rusKeyBoard[i].key;
+    }
+    else{
+      key.className = `key ${enKeyBoard[i].code}`;
+      key.innerHTML = enKeyBoard[i].key;
+    }
     row5.append(key);
   }
   keyboard.append(row5);
@@ -135,6 +178,7 @@ const changeLanguage=(str)=>{
   let i=0;
   if(firstKey.innerHTML.charCodeAt(0)===81||firstKey.innerHTML.charCodeAt(0)===113)
   {
+    sessionStorage.setItem('lang','rus');
     for(let elem of elements)
     {
       if(str!=='shift') elem.innerHTML=rusKeyBoard[i].key;
@@ -143,6 +187,7 @@ const changeLanguage=(str)=>{
     }
   }
   else{
+    sessionStorage.setItem('lang','en');
     for(let elem of elements)
     {
       if(str!=='shift') elem.innerHTML=enKeyBoard[i].key;
@@ -216,8 +261,16 @@ const shiftAction=(str='off')=>{
     i++;
   }
 }
+const textAreaAction=()=>{
+
+  let textArea=document.querySelector('.text-area');
+
+
+
+}
 document.addEventListener('keydown', (event)=>{
 
+ 
     if((event.key ==='Alt'&& event.ctrlKey===true)||(event.key==='Control' && event.altKey===true))
     {
       if(event.shiftKey===true)changeLanguage('shift');
@@ -233,7 +286,6 @@ document.addEventListener('keydown', (event)=>{
     { 
       if(enKeyBoard[i].code===event.code)
       {
-        event.preventDefault();
         document.querySelector('.'+event.code).classList.add('clicked');
         break;
       }
@@ -243,6 +295,8 @@ document.addEventListener('keydown', (event)=>{
     {
         shiftAction('on');
     }
+   
+    textAreaAction();
     
 });
 document.addEventListener('keyup', (event)=>{
