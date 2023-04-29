@@ -1,4 +1,4 @@
-export let enKeyBoard = [
+export const enKeyBoard = [
   {
     key: '`',
     code: 'Backquote',
@@ -233,7 +233,7 @@ export let enKeyBoard = [
     code: 'AltLeft',
   },
   {
-    key: '',
+    key: ' ',
     code: 'Space',
   },
   {
@@ -257,7 +257,7 @@ export let enKeyBoard = [
     code: 'ControlRight',
   },
 ];
-export let enKeyBoardShift = [
+export const enKeyBoardShift = [
   {
     key: '~',
     code: 'Backquote',
@@ -492,7 +492,7 @@ export let enKeyBoardShift = [
     code: 'AltLeft',
   },
   {
-    key: '',
+    key: ' ',
     code: 'Space',
   },
   {
@@ -516,7 +516,7 @@ export let enKeyBoardShift = [
     code: 'ControlRight',
   },
 ];
-export let rusKeyBoardShift = [
+export const rusKeyBoardShift = [
   {
     key: 'ё',
     code: 'Backquote',
@@ -679,7 +679,7 @@ export let rusKeyBoardShift = [
     code: 'Semicolon',
   },
   {
-    key: "э",
+    key: 'э',
     code: 'Quote',
   },
   {
@@ -751,7 +751,7 @@ export let rusKeyBoardShift = [
     code: 'AltLeft',
   },
   {
-    key: '',
+    key: ' ',
     code: 'Space',
   },
   {
@@ -775,7 +775,7 @@ export let rusKeyBoardShift = [
     code: 'ControlRight',
   },
 ];
-export let rusKeyBoard = [
+export const rusKeyBoard = [
   {
     key: 'ё',
     code: 'Backquote',
@@ -938,7 +938,7 @@ export let rusKeyBoard = [
     code: 'Semicolon',
   },
   {
-    key: "э",
+    key: 'э',
     code: 'Quote',
   },
   {
@@ -1010,7 +1010,7 @@ export let rusKeyBoard = [
     code: 'AltLeft',
   },
   {
-    key: '',
+    key: ' ',
     code: 'Space',
   },
   {

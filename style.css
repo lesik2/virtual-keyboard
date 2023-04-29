@@ -17,7 +17,7 @@ img{
 .title{
   text-align: center;
   margin: 20px 0;
-  color: #527a7a;
+  color: #256C92;
   font-weight: 600;
   font-size: 40px;
 }
@@ -29,6 +29,7 @@ img{
   height: 200px;
   margin: 10px auto 10px;
   color: #000000;
+  
 }
 .description,.language{
   text-align: center;
