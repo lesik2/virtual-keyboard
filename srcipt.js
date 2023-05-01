@@ -225,6 +225,11 @@ const textAreaAction = (symbol) => {
     textArea.selectionEnd = index + 1;
     return;
   }
+  if(symbol==='&amp;')
+  {
+    textArea.setRangeText('&', textArea.selectionStart, textArea.selectionEnd, 'end');
+    return;
+  }
   textArea.setRangeText(symbol, textArea.selectionStart, textArea.selectionEnd, 'end');
 };
 document.addEventListener('keydown', (event) => {
