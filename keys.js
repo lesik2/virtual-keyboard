@@ -287,7 +287,7 @@ export const enKeyBoardShift = [
     code: 'Digit6',
   },
   {
-    key: '&',
+    key: "&",
     code: 'Digit7',
   },
   {
