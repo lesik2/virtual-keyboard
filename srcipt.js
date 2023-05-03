@@ -225,8 +225,7 @@ const textAreaAction = (symbol) => {
     textArea.selectionEnd = index + 1;
     return;
   }
-  if(symbol==='&amp;')
-  {
+  if (symbol === '&amp;') {
     textArea.setRangeText('&', textArea.selectionStart, textArea.selectionEnd, 'end');
     return;
   }

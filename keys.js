@@ -287,7 +287,7 @@ export const enKeyBoardShift = [
     code: 'Digit6',
   },
   {
-    key: "&",
+    key: '&',
     code: 'Digit7',
   },
   {
@@ -460,11 +460,11 @@ export const enKeyBoardShift = [
     code: 'KeyM',
   },
   {
-    key: '<',
+    key: '&#8249;',
     code: 'Comma',
   },
   {
-    key: '>',
+    key: '&#8250;',
     code: 'Period',
   },
   {
